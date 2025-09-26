@@ -1,0 +1,32 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++ Compile",
+            "command": "gcc",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${workspaceFolder}/1942.c",
+                "-o${workspaceFolder}/1942",
+                "-I/home/nicol/dev/SDL/include",
+                "-L/home/nicol/dev/SDL/build",
+                "-Wl,-rpath,/home/nicol/dev/SDL/build",
+                "-Wl,--enable-new-dtags",
+                "-lSDL3"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Compiler: gcc"
+        }
+    ]
+}
