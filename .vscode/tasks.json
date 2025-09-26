@@ -10,9 +10,9 @@
                 "-g",
                 "${workspaceFolder}/1942.c",
                 "-o${workspaceFolder}/1942",
-                "-I/home/nicol/dev/SDL/include",
-                "-L/home/nicol/dev/SDL/build",
-                "-Wl,-rpath,/home/nicol/dev/SDL/build",
+                "-I/home/nicolas/dev/SDL/include",
+                "-L/home/nicolas/dev/SDL/build",
+                "-Wl,-rpath,/home/nicolas/dev/SDL/build",
                 "-Wl,--enable-new-dtags",
                 "-lSDL3"
             ],
