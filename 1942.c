@@ -9,7 +9,11 @@ static SDL_Renderer *renderer = NULL;
 
 SDL_AppResult SDL_AppInit(void **appstate, int argc, char *argv[])
 {
-    if (!SDL_CreateWindowAndRenderer("Hello World", 800, 600, SDL_WINDOW_FULLSCREEN, &window, &renderer)) {
+
+    int width = 800;
+    int height = 600;
+
+    if (!SDL_CreateWindowAndRenderer("Hello World", width, height, SDL_WINDOW_RESIZABLE, &window, &renderer)) {
         SDL_Log("Couldn't create window and renderer: %s", SDL_GetError());
         return SDL_APP_FAILURE;
     }
@@ -29,22 +33,11 @@ SDL_AppResult SDL_AppEvent(void *appstate, SDL_Event *event)
 
 SDL_AppResult SDL_AppIterate(void *appstate)
 {
-    const char *message = "Hello World!";
-    int w = 0, h = 0;
-    float x, y;
-    const float scale = 4.0f;
-
-    /* Center the message and scale it up */
-    SDL_GetRenderOutputSize(renderer, &w, &h);
-    SDL_SetRenderScale(renderer, scale, scale);
-    x = ((w / scale) - SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE * SDL_strlen(message)) / 2;
-    y = ((h / scale) - SDL_DEBUG_TEXT_FONT_CHARACTER_SIZE) / 2;
-
     /* Draw the message */
     SDL_SetRenderDrawColor(renderer, 0, 0, 0, 255);
     SDL_RenderClear(renderer);
-    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
-    SDL_RenderDebugText(renderer, x, y, message);
+
+    
     SDL_RenderPresent(renderer);
 
     return SDL_APP_CONTINUE;
