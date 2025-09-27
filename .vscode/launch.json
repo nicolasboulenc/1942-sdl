@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "(gdb) Launch",
+            "name": "DEBUG",
             "type": "cppdbg",
             "request": "launch",
             "program": "${workspaceFolder}/1942",
@@ -22,7 +22,7 @@
                     "ignoreFailures": true
                 }
             ],
-            "preLaunchTask": "C/C++ Compile"
+            "preLaunchTask": "COMPILE"
         }
-    ]
+   ]
 }

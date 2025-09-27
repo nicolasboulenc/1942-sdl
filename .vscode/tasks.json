@@ -3,18 +3,17 @@
     "tasks": [
         {
             "type": "cppbuild",
-            "label": "C/C++ Compile",
-            "command": "gcc",
+            "label": "COMPILE",
+            "command": "g++",
             "args": [
-                "-fdiagnostics-color=always",
-                "-g",
                 "${workspaceFolder}/1942.c",
                 "-o${workspaceFolder}/1942",
-                "-I/home/nicolas/dev/SDL/include",
-                "-L/home/nicolas/dev/SDL/build",
-                "-Wl,-rpath,/home/nicolas/dev/SDL/build",
+                "-I/usr/local/include",
+                "-L/usr/local/lib",
+                "-Wl,-rpath,/usr/local/lib",
                 "-Wl,--enable-new-dtags",
-                "-lSDL3"
+                "-lSDL3",
+                "-lSDL3_image"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
